@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+</head>
+<body>
+	<button onclick="clic()" onmouseover="onmOver()" onmouseout="onmOver()">Click para abrir un alaerta</button>
+	<br>
+	<button id="boton"> addEventListener</button>
+	<script>
+		// evento cick
+		function clic() {
+			alert("Hola soy el evento click");
+		}
+
+		// Evento onmouseover: cuando el mause entra al boton
+		function onmOver() {
+			alert("Hola soy el evento onmouseover");
+		}
+
+		// Evento onmouseout
+		function onmOout() {
+			alert("Hola soy el evento onmouseout");
+		}
+
+		/**
+		* Agregando eventos con addEventListener
+		*/ 
+		var boton = document.getElementById( 'boton' );
+		boton.addEventListener('click',function(){
+			alert("Hola soy un alert");
+		});
+	</script>
+</body>
+</html>

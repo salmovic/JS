@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Torres Hanoi</title>
+</head>
+<body>
+	<h1>Torres de Hanoi <small>(Recursividad)</small></h1>
+	<form >
+		<label for="">Ingrese el numero de discos:
+			<input type="number" id="disco">			
+		</label>
+		<br>
+		<input type="button" value="Jugar" onclick="hanoi()">
+	</form>
+	<div id="resp"></div>
+
+	<script>
+		function hanoi() {
+			var disco = document.getElementById('disco').value;
+			var resp = document.getElementById('resp');
+			var cont=0;
+			function torres_hanoi( disco, origen, auxiliar, destino) {
+				if( disco == 1 ) {
+					resp.innerHTML+="<p>Mover torre " +origen+" a torre "+destino+"</p>";
+					cont++;
+					return;					
+				}
+				cont ++;
+				torres_hanoi( disco-1, origen, destino, auxiliar);
+				resp.innerHTML+="<p>Mover torre" +origen+" a torre"+destino+"</p>";
+				torres_hanoi( disco-1, auxiliar, origen, destino);				
+			}
+			torres_hanoi( disco,1,2,3 );
+			resp.innerHTML+="<p>Juego finalizado. Movimientos "+ cont +"</p>";
+		}
+	</script>
+</body>
+</html>

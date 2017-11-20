@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+</head>
+<body>
+	<button id="btn">Click</button>
+	<script>
+	//JSON = JavasCript Object Notation
+	var arreglos =[1,2,3,4];
+
+	var curso = {
+		titulo: "Curos JavaScript",
+		videos: 19,
+		tutor: "Uriel",
+		introduccion: function(){
+			console.log("Bienvenido al curso "+this.titulo+" Que tiene "+this.videos+" Videos");
+			this.otra_funcion();
+		},
+		otra_funcion: function(){
+
+		}
+	};
+	console.log(curso["tutor"]);
+	console.log(curso.titulo);
+	console.log(curso.introduccion());
+
+	</script>
+</body>
+</html>

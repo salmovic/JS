@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Seleccionar elementos</title>
+	<style>
+		.myClase {
+			background: red;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="mi_div"></div>
+	<div class="myClase"></div>
+	<script>
+
+
+		// Seleccionar elmentos por id
+		var id = document.getElementById('mi_div');
+		console.log("Seleccion por id: "+id);
+		
+		//Seleccionar elementos por su clase
+		var clase = document.getElementsByClassName('myClase');
+		console.log("Seleccion por clase: "+clase);
+
+		//Seleccionar por target
+		var tag = document.getElementsByTagName('div');
+		console.log("Seleccionado por Tags: "+tag);
+
+		function $( target ) {
+			return document.querySelector( target );
+		}
+		console.log("Mi clase con selector: "+$('.myClase'));
+	</script>
+</body>
+</html>

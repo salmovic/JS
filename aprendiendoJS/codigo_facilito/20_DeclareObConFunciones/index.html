@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos con funciones</title>
+</head>
+<body>
+	<script>
+		//DEclarar funciones con javascript
+		function Tutor (nombre, apellido) {
+			this.nombre=nombre;
+			this.saludar=function () {
+				console.log("Hola mi nombres es: "+nombre);
+			}
+			if(typeof apellido !== "undefined") {
+				this.nombre_completo = nombre+" "+apellido;
+			}
+		}
+
+		var chava = new Tutor("Salvador", "Morales");
+		chava.saludar();
+		console.log(chava.nombre_completo);
+
+		var jose = new Tutor("Jose",);
+		jose.saludar();
+		console.log(jose.nombre_completo);
+	</script>
+</body>
+</html>

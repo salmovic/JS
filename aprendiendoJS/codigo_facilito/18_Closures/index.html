@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clousure</title>
+</head>
+<body>
+	<button id="btn">Click</button>
+	<script>
+	//Encerramos el codigo en una funcion anonima para evitar sobreescribir los valoes globales
+		(function(){
+			document.getElementById("btn").addEventListener("click",function(){
+				console.log("Se ha hecho click");
+			});
+			setTimeout(function(){
+				console.log(holaMundo("Chava Morales"));
+			},2000);
+		})();
+
+		function holaMundo(nombre) {
+			function construt() {
+				return "Adios "+nombre;
+			}
+			return construt();
+		}
+
+	</script>
+</body>
+</html>

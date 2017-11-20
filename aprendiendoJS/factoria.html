@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Factorial</title>
+	<style>
+		p {
+			background-color: green;
+		}
+		.par {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Ultimo digito del factorial.</h1>
+	<form>
+		<label for="">Ingresar un numero.
+		<input type="number" id="numero">
+		</label>		
+		<br>
+		<input type="button" onclick="calcular();" value="Calcular">
+	</form>
+	<div id="resp">		
+	</div>
+	<script>
+		function calcular() {
+			var fac = document.getElementById('numero').value;
+			var total=fac;
+			var len;
+			for (var i = 1; i < fac-1; i++) {
+				total = total*(fac-i);
+				len=(""+total).length;
+				if(i%2==0) {
+					document.getElementById('resp').innerHTML+= "<p class='par'>Total: "+total+" Ultimo digito= "+(""+total).charAt(len-1)+"</p>";
+					continue;
+				} 
+				document.getElementById('resp').innerHTML+= "<p>Total: "+total+" Ultimo digito= "+(""+total).substring(len-1,len)+"</p>";
+			}
+			
+		}
+	</script>
+</body>
+</html>

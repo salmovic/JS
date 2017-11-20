@@ -1,0 +1,16 @@
+<script>
+	var numeros = [10,6,8,4,12];
+	var cuadrados=[];
+	for (var i = numeros.length - 1; i >= 0; i--) {
+		var num = numeros[i];
+		cuadrados.push(Math.pow(num,2));
+	}
+	console.log(cuadrados);
+	// utilizando la funcion map
+
+	var cuad=numeros.map(function(elementos) {
+		return elementos*elementos;
+	});
+	console.log("map--------");
+	console.log(cuadrados);
+</script>

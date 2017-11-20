@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metodos para arreglos</title>
+</head>
+<body>
+	<script>
+		//Codigo JavaScript
+		var arrString = ["w","f","z","a"];
+		var arreglo = [2,5,1,10,28];
+
+		arreglo.sort(ordenamiento);
+		console.log(arreglo);
+		//aplicando el metod reverse
+		arreglo.reverse();
+		console.log("Aplicando reverse: {" + arreglo+"}");
+		arrString.sort();
+		console.log(arrString);
+
+		//funcion para validar el algorito de ordenamiento para enteros
+		function ordenamiento( a, b ) {
+			return a-b;
+		}
+
+
+		/*
+		Convertir una cadena a arreglo
+		*/
+		var cadArr = "f,s,d,e,f,g".split(",");
+		console.log(cadArr);
+		/*
+		Convertir un arreglo a un String, separado por comas
+		*/
+		var st=cadArr.join(",");
+		console.log(st);
+	</script>
+</body>
+</html>

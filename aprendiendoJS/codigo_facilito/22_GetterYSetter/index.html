@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Getter Y Setter</title>
+</head>
+<body>
+	<script>		
+	var curso = {
+		titulo: "Curos JavaScript",
+		videos: 19,
+		tutor: "Uriel",
+		//Manualmnte
+		getTutor: function() {
+			return this.tutor;
+		},
+		setTutor: function(tutor) {
+			if (tutor==="" || typeof tutor==="undefined")return;
+			this.tutor=tutor;
+		},
+		//ES5
+		get tutorg() {
+			return this.tutor;
+		},
+		set tutors(tutor) {
+			if(tutor==="" || typeof tutor ==="undefined") return;
+			this.tutor=tutor;
+		}
+	};
+
+	console.log(curso.getTutor());
+	curso.setTutor("Salvador");
+	console.log(curso.getTutor());
+	curso.setTutor();
+	console.log(curso.getTutor());
+
+	//Accediendo a get y set ES5
+	console.log(curso.tutorg);
+	curso.tutors="Moooooo";
+	console.log(curso.tutorg);	
+
+	</script>
+</body>
+</html>

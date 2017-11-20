@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="demo">
+	<button type="button" name="demo" onclick="myFunction()">Validate</button>
+	<div id="message"></div>
+	<script>
+		function myFunction() {
+			var message, x;
+			message=document.getElementById('message');
+
+			message.innerHTML="";
+			x=document.getElementsByTagName('demo').value;
+			
+			try{
+				if( x=="" ) throw "Esta vacio";
+				if( isNaN( x ) ) throw "No es un numero";
+				x = Number( x );
+				if( x > 10 ) throw " El numero es grande";
+				if( x < 5 ) throw "El numero es pequenio";
+			} catch( err ) {
+				message.innerHTML= "Error "+err;
+			} finally {
+				document.getElementById("demo").value="";
+			}
+		}
+		//sum the range
+		
+	</script>
+</body>
+</html>

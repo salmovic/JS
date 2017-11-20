@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos con funciones</title>
+</head>
+<body>
+	<script>
+		//DEclarar funciones con javascript
+		function Tutor (nombre, apellido) {
+			this.nombre=nombre;
+			this.saludar=function () {
+				console.log("Hola mi nombres es: "+nombre);
+			}
+			if(typeof apellido !== "undefined") {
+				this.nombre_completo = nombre+" "+apellido;
+			}
+		}
+		// Valor comun declaraca con prototype
+		Tutor.prototype.valCommon = 12;
+		//FUncion global del objetoClase 
+		Tutor.prototype.functionComm = function () {
+			console.log("Hola soy una funcion anonima compartida");
+		}
+
+		var chava = new Tutor("Salvador", "Morales");
+		chava.saludar();
+		console.log(chava.nombre_completo);
+
+		var jose = new Tutor("Jose","HO");
+		jose.saludar();
+		console.log(jose.nombre_completo);
+		 console.log("prototype");
+		 console.log(chava.valCommon);
+		 console.log(jose.valCommon);
+		 console.log("prototype function");
+		 console.log(chava.functionComm());
+		 console.log(jose.functionComm());
+
+		console.log(chava.__proto__);
+	</script>
+</body>
+</html>

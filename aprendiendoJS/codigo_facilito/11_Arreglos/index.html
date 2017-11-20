@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arreglos</title>
+</head>
+<body>
+	<script>
+		//Codigo JavaScript
+		//Arreglos
+
+		//var arreglo = new Array(20);
+		var arreglo = [34,2,32];
+		//Concer el tamanio del arreglo
+		var len  = arreglo.length;
+		//colocar un objeto al final de arreglo 
+		arreglo.push(10);
+		//agrega un elemento al arreglo al principio
+		arreglo.unshift(9);
+		console.log(len);
+		len  = arreglo.length;
+		console.log(len);
+
+		//eliminar el primir elemento del arreglo 
+		arreglo.shift();
+		len  = arreglo.length;
+		console.log(len);
+		//eliminar el ultimo elemento del arreglo 
+		arreglo.pop();
+		len = arreglo.length;
+		console.log(len);
+
+		//ciclo for
+		console.log(arreglo);
+	 	for (var i = len-1; i>=0; i--) {
+	 		console.log(arreglo[i]);
+	 	}
+	</script>
+</body>
+</html>

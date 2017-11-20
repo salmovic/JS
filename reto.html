@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto</title>
+</head>
+<body>
+	<h1>Constante de Kaprekar</h1>
+	<form action="">
+		<label for="">Ingresa un numero de 4 dijitos</label>
+		<input type="number" name="num" id="num">
+		<button type="button" onclick="reto()">Aceptar</button>
+	</form>
+	<div id="resp"></div>
+	<script>
+	//reglas: https://www.aceptaelreto.com/problem/statement.php?id=100
+		function reto() {
+			var num = document.getElementById("num").value.toString();
+			var demo = document.getElementById("resp");
+			num= addZero( num );
+
+			// ordernar ascendente
+			var res,arrNum, cont= 0;
+			arNum = generarArr( num );
+			do{
+
+			var des= ordenarDesendiente(arNum);
+			var as= ordenarAscendente( arNum );
+			res = (parseInt(des)-parseInt(as));
+			var x = res+"";
+			x= addZero( x );
+			console.log();
+			demo.innerHTML+=(des+"-"+ as +"="+x)+"<br>";
+			arNum = generarArr( x );
+			cont++;
+			} while( res != 6174 );
+			demo.innerHTML+="Iteraciones "+cont+"<br>";
+		}
+		function addZero( x ) {
+			switch( x.length ) {
+				case 1:
+				return "000"+x;
+				break;
+				case 2:
+				return "00"+x;
+				break;
+				case 3:
+				return "0"+x;
+				break;
+				default:
+				return x;
+				break;
+			}
+		}
+		function generarArr( num ) {
+			var i, len = num.length;
+			var arr=[];
+			for( i = 0; i < len; i++ ) {
+				arr[i] = parseInt( num.charAt(i) );
+			}
+			return arr;
+		}
+		function ordenarAscendente( arrN ) {
+			burbuja( arrN );
+			var i, len = arrN.length;
+			var numero="";
+			for(i=0;i<len;i++){
+				numero+=arrN[i];
+			}
+			return numero;
+		}
+		function burbuja(arrN) {
+			var i,j,len = arrN.length;
+			var aux;
+			var numero="";
+			for( i = 0 ; i < len ; i++ ) {
+				for( j = 0; j < len-i; j++ ) {
+					if( arrN[j] > arrN[j+1] ) {
+						aux = arrN[j];
+						arrN[j] = arrN[j+1];
+						arrN[j+1] = aux;
+					}
+				}
+			}
+		}
+		function ordenarDesendiente( arrN ) {
+			burbuja( arrN );
+			var i, len = arrN.length;
+			var numero="";
+			for(i=len-1;i>=0;i--){
+				numero+=arrN[i];
+			}
+			return numero;
+		}
+		// Evento cerrar Ventana
+		window.onbeforeunload = function( e ) {
+			console.log( e.eventPhase() );
+			return "¿Seguro que quieres salir?";
+		}
+
+	</script>
+</body>
+</html>

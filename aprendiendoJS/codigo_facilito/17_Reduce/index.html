@@ -1,0 +1,15 @@
+<script>
+ 	var hola = ["H","O","L","A"];
+	var x=hola.reduce(function(val_ant,val_act,index,array){
+		return val_ant+val_act;
+	});
+	console.log(x);
+
+	var numero = [3,2,1,2];
+	var val_inicial=2;
+	var suma = numero.reduce(function(val_ant,val_act,index,array){
+		return val_ant+val_act;
+	},val_inicial);
+
+	console.log(suma);
+</script>
